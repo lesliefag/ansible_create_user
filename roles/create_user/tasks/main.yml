@@ -1,0 +1,19 @@
+---
+- name: Create user and generate ssh key
+  user:
+    name: "{{ item.key }}"
+    shell: "{{ item.value.shell }}"
+    home: "{{ item.value.home }}"
+    comment: "{{ item.value.fullname }}"
+    generate_ssh_key: yes
+    ssh_key_bits: 4096
+    ssh_key_file: .ssh/id_rsa
+  with_dict: "{{ users }}"
+- name: Add user admin (passwordless)
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^{{ item.key }} '
+    line: '{{ item.key }} ALL=(ALL) NOPASSWD:ALL'
+  with_dict: "{{ users }}"
+  when: item.value.admin == true

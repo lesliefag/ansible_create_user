@@ -1,0 +1,27 @@
+---
+users:
+  sanchez:
+    admin: true
+    shell: /bin/bash
+    home: /home/sanchez
+    fullname: Rick Sanchez
+  morty:
+    admin: false
+    shell: /bin/sh
+    home: /var/tmp/morty
+    fullname: Morty Smith
+  beth:
+    admin: false
+    shell: /bin/sh
+    home: /home/beth
+    fullname: Beth Smith
+  jerry:
+    admin: false
+    shell: /bin/bash
+    home: /tmp/jerry
+    fullname: Jerry Smith
+  summer:
+    admin: false
+    shell: /bin/sh
+    home: /home/summer
+    fullname: Summer Smith

@@ -1,0 +1,6 @@
+---
+- hosts: tests
+  vars_files: 
+   - "group_vars/users"
+  roles:
+   - create_user
